@@ -16,7 +16,7 @@ namespace SIENN.Services.Model
 
         public override string ToString()
         {
-            return $"{this.GetType().Name} [({Code}) '{Description}']";
+            return $"({Code}) '{Description}'";
         }
     }
 }

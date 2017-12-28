@@ -1,8 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Diagnostics;
 
 namespace SIENN.Services.Model
 {
-    public class ProductCategories
+	[DebuggerDisplay("p:{ProductCode} c:{CategoryCode}")]
+	public class ProductCategories
     {
 		[Required]
 		public int ProductCode { get; set; }
