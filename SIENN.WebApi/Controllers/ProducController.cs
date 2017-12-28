@@ -7,29 +7,29 @@ using SIENN.Services.Model;
 
 namespace SIENN.WebApi.Controllers
 {
-	public class ProducController : Controller //BaseController<Product>
+	public class ProducController : BaseController<Product>
     {
         protected ProductService svc;
 
-        public ProducController(IGenericService<Product> svc) //: base(svc)
+        public ProducController(IGenericService<Product> svc) : base(svc)
         {
 			this.svc = (ProductService)svc;
         }
 
 
-		[HttpGet]
+		[HttpGet("Available")]
 		public IEnumerable<Product> GetAvailable(int start, int count)
 		{
 			return svc.GetAvailable(start, count);
 		}
 
-		[HttpGet]
+		[HttpGet("Filter")]
 		public IEnumerable<Product> GetFiltered(int start, int count, int? categoryId, int? typeId, int? unitId)
 		{
 			return svc.GetFiltered(start, count, categoryId, typeId, unitId);
 		}
 
-		[HttpGet]
+		[HttpGet("Info")]
 		public ActionResult GetInfo(int id)
 		{
 			/*
